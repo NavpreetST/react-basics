@@ -1,5 +1,5 @@
 import styles from "./App.module.css";
-
+import { User } from "./list_user";
 
 export default function List_ternary_exercise(){
 //loop through planet and display their name. Only display if they are a gas planet.
@@ -15,20 +15,42 @@ export default function List_ternary_exercise(){
     ];
     
     return(
-        <div className="App">
-            
+        // <div className="App">
+        //      {planet.map((user, key) => {
+        //         return (
+        //             <CheckPlanet name = {user.name} age = {user.age}/>
+        //         )
+        //     })}
+        // </div>
+
+        <div>
+           planet.map(planet, index) => {
+            return (
+
+                planet.isGasPlanet ? (
+                    <h2 key = {index}> {planet.name}</h2>
+                )
+            )
+
         </div>
     )
     
 }
 
 const CheckPlanet = (props) =>{
-
+    const GasPlanet = props.isGasPlanet 
+    
     return(
         <div>
             
-            {/* props.isGasPlanet ? <h1>{props.name}</h1> */}
+             <h1>{props.name} {GasPlanet}</h1>
         </div>
     )
 } 
+
+
+
+
+
+
 
